@@ -2,16 +2,27 @@ import Image from 'next/image'
 import React from 'react'
 import {SearchIcon, UserGroupIcon, MenuIcon, PaperAirplaneIcon, HeartIcon, PlusCircleIcon} from '@heroicons/react/outline'
 import {HomeIcon} from '@heroicons/react/solid'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/router'
+import { modalState } from '../atoms/modalAtom'
+import { useRecoilState } from 'recoil'
 const Header = () => {
+    
+    const [open, setOpen] = useRecoilState(modalState)
+    const {data: session, status} = useSession();
+    // const open = useRecoilValue(modalState);
+    const router = useRouter();
+
   return (
-    <div>
+    <div className='shadow-sm border-b bg-white sticky top-0 z-5'>
         <div className='flex justify-between max-w-6xl mx-5 lg:mx-auto'>
             {/* LEFT */}
-            <div className='relative hidden lg:inline-grid w-24 '>
+            <div onClick={() => {router.push('/')}} className='relative hidden lg:inline-grid w-24 '>
                 <Image
                 src='https://links.papareact.com/ocw'
                 fill
                 alt=''
+                className='cursor-pointer'
                 style={{objectFit: 'contain'}}
                 />
             </div>
@@ -38,13 +49,25 @@ const Header = () => {
 
             {/* RIGHT */}
             <div className='flex items-center justify-end space-x-4'>
-                <HomeIcon className='buttonNav' />
+                <HomeIcon onClick={() => {router.push('/')}} className='buttonNav' />
                 <MenuIcon className='h-6 md:hidden cursor-pointer' />
-                <PaperAirplaneIcon className='buttonNav' />
-                <PlusCircleIcon className='buttonNav' />
-                <UserGroupIcon className='buttonNav' />
-                <HeartIcon className='buttonNav' />
 
+                {session ? (
+                    <>
+                    <div className='relative navBtn'>
+                        <PaperAirplaneIcon className='buttonNav rotate-45' />
+                        <div className='text-xs text-white w-5 h-5 absolute -top-1 -right-2 bg-red-500 rounded-full flex items-center justify-center animate-pulse '>3</div>
+                    </div>
+
+                    <PlusCircleIcon onClick={() => {setOpen(true)}} className='buttonNav' />
+                    <UserGroupIcon className='buttonNav' />
+                    <HeartIcon className='buttonNav' />
+
+                    <img onClick={signOut} src={session.user.image} alt='' className='cursor-pointer h-10 w-10 rounded-full' />
+                    </>
+                ): (
+                    <button onClick={signIn}>Sign in</button>
+                )}
                 
 
 
@@ -56,3 +79,6 @@ const Header = () => {
 }
 
 export default Header
+
+
+    
