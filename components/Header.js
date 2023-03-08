@@ -14,7 +14,7 @@ const Header = () => {
     const router = useRouter();
 
   return (
-    <div className='shadow-sm border-b bg-white sticky top-0 z-5'>
+    <div className='shadow-sm border-b bg-white sticky top-0 z-10'>
         <div className='flex justify-between max-w-6xl mx-5 lg:mx-auto'>
             {/* LEFT */}
             <div onClick={() => {router.push('/')}} className='relative hidden lg:inline-grid w-24 '>
