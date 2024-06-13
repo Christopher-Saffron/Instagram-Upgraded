@@ -1,4 +1,4 @@
-![preview-socialmedia2](https://github.com/Havir-S/images-in-readme/assets/54580940/f1715654-e492-42aa-aa00-860ffd965fbd)
+![social sphere](https://github.com/Christopher-Saffron/Social-Sphere/assets/54580940/ce3bd931-f390-4681-92e3-33feab45fd97)
 
 # Hello there!
 ## Instagram replica
