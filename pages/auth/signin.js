@@ -9,7 +9,7 @@ const signIn = ({ providers }) => {
       <div className="flex flex-col text-center items-center justify-center min-h-screen px-14 py-2 -mt-56">
         <img className="w-80" src="/social-sphere-logo.png" alt="" />
         <p className="font-xs mt-12 italic font-semibold">
-          NOT A REAL APP. BUILT FOR A PORTFOLIO PURPOSES ONLY.
+          BUILT FOR PORTFOLIO PURPOSES ONLY.
         </p>
         <div className="mt-20">
           {Object.values(providers).map((provider) => (
