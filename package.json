@@ -1,6 +1,7 @@
 {
-  "name": "instagram",
+  "name": "Social Sphere",
   "version": "0.1.0",
+  "author": "Christopher Saffron",
   "private": true,
   "scripts": {
     "dev": "next dev",
