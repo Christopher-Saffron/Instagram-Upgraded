@@ -1,4 +1,4 @@
-![social](https://github.com/Christopher-Saffron/Social-Sphere/assets/54580940/f305f60d-dc3f-4370-bc8d-0b17de8ffa4c)
+![social sphereee](https://github.com/Christopher-Saffron/Social-Sphere/assets/54580940/1535ba56-97df-47aa-b436-f0630775b880)
 
 # Hello there!
 ## Instagram replica
